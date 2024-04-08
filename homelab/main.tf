@@ -1,7 +1,15 @@
 terraform {
-  required_version = ">= 0.12"
+  required_providers {
+    proxmox = {
+      source  = "telmate/proxmox"
+      version = "<version tag>"
+    }
+  }
 }
 
+provider "proxmox" {
+  # Configuration options
+}
 
 resource "proxmox_lxc" "basic" {
   target_node  = "pve"
